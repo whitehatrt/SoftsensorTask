@@ -1,7 +1,16 @@
-import '../styles/globals.css'
+import { useEffect } from "react";
+import "../styles/globals.css";
+
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  useEffect(() => {
+    typeof window !== undefined ? require("../public/assets/js/navbar.js") : "";
+  }, []);
+  return (
+ 
+      <Component {...pageProps} />
+   
+  );
 }
 
-export default MyApp
+export default MyApp;
